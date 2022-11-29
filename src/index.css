@@ -1,13 +1,232 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+/* base styles */
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Quicksand";
+  color: #333;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+#root,
+.app {
+  height: 100%;
+}
+
+.navbar {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.navbar h1 {
+  color: black;
+}
+
+.navbar .links {
+  margin-left: auto;
+}
+
+.navbar a {
+  margin-left: 16px;
+  text-decoration: none;
+  padding: 6px;
+}
+
+.linkToAdd{
+  color: white;
+  background-color: lightskyblue;
+  border-radius: 8px; 
+}
+
+.linkToAdd:hover {
+  background-color: rgb(93, 181, 210);
+}
+
+.content {
+  max-width: 600px;
+  margin: 10px auto;
+  /* padding: 20px; */
+  min-height: 100%;
+}
+
+/* TodoList */
+
+.TodoList {
+  margin: 5px auto;
+  padding: 10px;
+  max-width: 700px;
+  color: #fff;
+}
+
+.TodoList ul {
+  width: 500px;
+  margin: 10px;
+  list-style: none;
+}
+
+.TodoList h1 {
+  font-weight: normal;
+  font-size: 2.6rem;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.TodoList h1 span {
+  display: block;
+  font-size: 0.8rem;
+  margin-bottom: 0.7rem;
+  margin-left: 3px;
+  margin-top: 0.2rem;
+}
+
+/* Todo */
+
+.Todo {
+  display: flex;
+  margin: 0 -3rem 4px;
+  padding: 1.1rem 1.5rem;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(159, 199, 200, 0.1);
+}
+
+.Todo-task {
+  position: relative;
+  transition: opacity 0.4s linear;
+}
+
+.Todo-task.completed {
+  opacity: 0.6;
+}
+
+.Todo-task.completed:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -0.5rem;
+  display: block;
+  width: 0%;
+  height: 2px;
+  background: #fff;
+  animation: strikeitem 0.5s ease-out 0s forwards;
+}
+
+@keyframes strikeitem {
+  to {
+    width: calc(100% + 1rem);
+  }
+}
+
+.Todo-buttons {
+  flex-shrink: 0;
+  padding-left: 0.7em;
+}
+
+.Todo-buttons button {
+  border: none;
+  font-size: 1em;
+  margin: 0.4em;
+  background: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.Todo-edit-form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Todo-edit-form label {
+  min-width: 100%;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.Todo-edit-form input {
+  flex-grow: 1;
+  border: none;
+  background: #f7f1f1;
+  padding: 0 1.5em;
+  font-size: initial;
+}
+
+.Todo-edit-form button {
+  padding: 0 1.3rem;
+  border: none;
+  background: lightskyblue;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  margin-left: 5px;
+  cursor: pointer;
+  border-radius: 8px;
+  transform: background 0.2s ease-out;
+}
+
+.Todo-edit-form button:hover {
+  background: rgb(103, 184, 238);
+}
+
+.Todo-edit-form input,
+.Todo-edit-form button {
+  font-family: "Quicksand", sans-serif;
+  height: 3rem;
+}
+
+/*CreateTodo*/
+
+.NewTodoForm {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 16px;
+}
+
+.NewTodoForm label {
+  min-width: 100%;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+}
+
+.NewTodoForm input {
+  flex-grow: 1;
+  border: none;
+  background: #f7f1f1;
+  padding: 0 1.5em;
+  font-size: initial;
+}
+
+.NewTodoForm button {
+  padding: 0 1.3rem;
+  border: none;
+  background: lightskyblue;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  margin-left: 5px;
+  margin-right: 14px;
+  cursor: pointer;
+  border-radius: 8px;
+  transform: background 0.2s ease-out;
+}
+
+.NewTodoForm button:hover {
+  background: rgb(103, 184, 238);
+}
+
+.NewTodoForm input,
+.NewTodoForm button {
+  font-family: "Quicksand", sans-serif;
+  height: 3rem;
 }
