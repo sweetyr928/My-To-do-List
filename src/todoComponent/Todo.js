@@ -2,34 +2,73 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPen } from "@fortawesome/free-solid-svg-icons";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
+// import { useNavigate } from "react-router-dom";
 
-function Todo({ todo, remove, update, toggleComplete }) {
+function Todo({ todo }) {
     const [isEditing, setIsEditing] = useState(false);
     const [task, setTask] = useState(todo.task);
+    // const navigate = useNavigate();
 
-    const handleClick = (e) => {
-        remove(todo.id);
+    const handleDelete = () => {
+        fetch(`http://localhost:3001/todoList/${todo.id}`, {
+            method: "DELETE",
+            headers: { 'Content-Type': 'application/json' },
+        })
+        .catch(err => console.log(err));
     };
+
     const toggleEdit = () => {
         setIsEditing(!isEditing);
     };
-    const handleUpdate = (e) => {
-        e.preventDefault();
-        update(todo.id, task);
-        toggleEdit();
-    };
+
     const handleChange = (e) => {
         setTask(e.target.value);
     };
-    const toggleCompleted = (e) => {
-        toggleComplete(todo.id);
+
+    const handleUpdate = (e) => {
+        e.preventDefault();
+        const patchData = {
+            "id": todo.id,
+            "task": task,
+            "completed": todo.completed,
+        }
+        fetch(`http://localhost:3001/todoList/${todo.id}`, {
+            method: "PATCH",
+            body: JSON.stringify(patchData),
+            headers: {
+                // 지금 보내는 데이터가 json 형태이다.
+                'Content-Type': 'application/json'
+            },
+        })
+        .catch(err => console.log(err));
+
+        toggleEdit();
+    };
+
+    const toggleCompleted = () => {
+
+        const patchData = {
+            "id": todo.id,
+            "task": todo.task,
+            "completed": !todo.completed,
+        }
+
+        fetch(`http://localhost:3001/todoList/${todo.id}`, {
+            method: "PATCH",
+            body: JSON.stringify(patchData),
+            headers: {
+                // 지금 보내는 데이터가 json 형태이다.
+                'Content-Type': 'application/json'
+            },
+        })
+        .catch(err => console.log(err));
     };
 
     return (isEditing ?
         <div className="Todo">
-            <form className="Todo-edit-form" onSubmit={handleUpdate}>
+            <form className="Todo-edit-form" >
                 <input onChange={handleChange} value={task} type="text" />
-                <button>Save</button>
+                <button onClick={handleUpdate}>Save</button>
             </form>
         </div> :
         <div className="Todo">
@@ -44,7 +83,7 @@ function Todo({ todo, remove, update, toggleComplete }) {
                 <button onClick={toggleEdit}>
                     <FontAwesomeIcon icon={faPen} />
                 </button>
-                <button onClick={handleClick}>
+                <button onClick={handleDelete}>
                     <FontAwesomeIcon icon={faTrash} />
                 </button>
             </div>

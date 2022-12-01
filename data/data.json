@@ -1,0 +1,24 @@
+{
+  "todoList": [
+    {
+      "id": 1,
+      "task": "딥다이브 10쪽 읽기",
+      "completed": true
+    },
+    {
+      "id": 2,
+      "task": "오늘 배운 내용 블로깅 하기",
+      "completed": false
+    },
+    {
+      "id": 3,
+      "task": "프로그래머스 세 문제 풀기",
+      "completed": false
+    },
+    {
+      "task": "dddddddd",
+      "completed": false,
+      "id": 4
+    }
+  ]
+}
