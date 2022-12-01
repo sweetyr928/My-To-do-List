@@ -14,6 +14,7 @@ function Todo({ todo }) {
             method: "DELETE",
             headers: { 'Content-Type': 'application/json' },
         })
+        .then(() => window.location.reload())
         .catch(err => console.log(err));
     };
 
@@ -40,6 +41,7 @@ function Todo({ todo }) {
                 'Content-Type': 'application/json'
             },
         })
+        .then(() => window.location.reload())
         .catch(err => console.log(err));
 
         toggleEdit();
@@ -61,6 +63,7 @@ function Todo({ todo }) {
                 'Content-Type': 'application/json'
             },
         })
+        .then(() => window.location.reload())
         .catch(err => console.log(err));
     };
 

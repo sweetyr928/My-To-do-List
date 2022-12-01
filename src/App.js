@@ -23,7 +23,7 @@ function App() {
         console.log(err);
       })
     
-  }, [todos])
+  }, [])
 
   return (
     <BrowserRouter>
