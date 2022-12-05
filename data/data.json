@@ -2,12 +2,12 @@
   "todoList": [
     {
       "id": 1,
-      "task": "딥다이브 10쪽 읽기",
-      "completed": false
+      "task": "딥다이브 13쪽 읽기",
+      "completed": true
     },
     {
       "id": 2,
-      "task": "오늘 배운 내용 블로깅 하기",
+      "task": "오늘 배운 내용 열심히 블로깅 하기",
       "completed": false
     },
     {
@@ -16,14 +16,19 @@
       "completed": false
     },
     {
-      "task": "helloddd",
+      "task": "스터디 8시에 참여하기",
       "completed": false,
       "id": 4
     },
     {
-      "task": "todolisthh",
+      "task": "리액트 강의 듣기",
       "completed": false,
       "id": 5
+    },
+    {
+      "task": "리액트 강의 10개",
+      "completed": false,
+      "id": 6
     }
   ]
 }

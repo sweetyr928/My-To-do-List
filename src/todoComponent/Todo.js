@@ -1,13 +1,11 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPen } from "@fortawesome/free-solid-svg-icons";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
-// import { useNavigate } from "react-router-dom";
 
 function Todo({ todo }) {
     const [isEditing, setIsEditing] = useState(false);
     const [task, setTask] = useState(todo.task);
-    // const navigate = useNavigate();
 
     const handleDelete = () => {
         fetch(`http://localhost:3001/todoList/${todo.id}`, {

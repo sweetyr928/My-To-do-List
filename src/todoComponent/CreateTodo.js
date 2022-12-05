@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import React, { useState } from "react";
+import { useState } from "react";
 // import { v4 as uuidv4 } from 'uuid';
 
 const CreateTodo = () => {
@@ -22,7 +22,8 @@ const CreateTodo = () => {
         fetch('http://localhost:3001/todoList', request)
             .then(() => {
                 // 홈으로 리다이렉트
-                navigate('/')
+                navigate('/');
+                window.location.reload(); // 확인
             })
             .catch(err => console.log(err));
         console.log(e.type);
