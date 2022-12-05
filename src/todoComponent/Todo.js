@@ -2,18 +2,14 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPen } from "@fortawesome/free-solid-svg-icons";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { fetchDelete, fetchPatch } from "../util/api";
 
 function Todo({ todo }) {
     const [isEditing, setIsEditing] = useState(false);
     const [task, setTask] = useState(todo.task);
 
     const handleDelete = () => {
-        fetch(`http://localhost:3001/todoList/${todo.id}`, {
-            method: "DELETE",
-            headers: { 'Content-Type': 'application/json' },
-        })
-        .then(() => window.location.reload())
-        .catch(err => console.log(err));
+        fetchDelete('http://localhost:3001/todoList/', todo.id);
     };
 
     const toggleEdit = () => {
@@ -31,16 +27,8 @@ function Todo({ todo }) {
             "task": task,
             "completed": todo.completed,
         }
-        fetch(`http://localhost:3001/todoList/${todo.id}`, {
-            method: "PATCH",
-            body: JSON.stringify(patchData),
-            headers: {
-                // 지금 보내는 데이터가 json 형태이다.
-                'Content-Type': 'application/json'
-            },
-        })
-        .then(() => window.location.reload())
-        .catch(err => console.log(err));
+
+        fetchPatch('http://localhost:3001/todoList/', todo.id, patchData);
 
         toggleEdit();
     };
@@ -53,16 +41,7 @@ function Todo({ todo }) {
             "completed": !todo.completed,
         }
 
-        fetch(`http://localhost:3001/todoList/${todo.id}`, {
-            method: "PATCH",
-            body: JSON.stringify(patchData),
-            headers: {
-                // 지금 보내는 데이터가 json 형태이다.
-                'Content-Type': 'application/json'
-            },
-        })
-        .then(() => window.location.reload())
-        .catch(err => console.log(err));
+        fetchPatch('http://localhost:3001/todoList/', todo.id, patchData);
     };
 
     return (isEditing ?

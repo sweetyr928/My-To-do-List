@@ -1,10 +1,8 @@
-import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-// import { v4 as uuidv4 } from 'uuid';
+import { fetchCreate } from "../util/api";
 
 const CreateTodo = () => {
     const [userInput, setUserInput] = useState("");
-    const navigate = useNavigate();
 
     const handleChange = e => {
         setUserInput(e.target.value);
@@ -14,19 +12,7 @@ const CreateTodo = () => {
         e.preventDefault();
 
         const newTodo = { task: userInput, completed: false };   
-        const request = {
-            method: "POST",
-            body: JSON.stringify(newTodo),
-            headers: { 'Content-Type': 'application/json' }
-        }
-        fetch('http://localhost:3001/todoList', request)
-            .then(() => {
-                // 홈으로 리다이렉트
-                navigate('/');
-                window.location.reload(); // 확인
-            })
-            .catch(err => console.log(err));
-        console.log(e.type);
+        fetchCreate('http://localhost:3001/todoList', newTodo)
 
         setUserInput("");
     };

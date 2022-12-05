@@ -16,19 +16,14 @@
       "completed": false
     },
     {
-      "task": "스터디 8시에 참여하기",
+      "task": "스터디 참여하기",
       "completed": false,
       "id": 4
     },
     {
-      "task": "리액트 강의 듣기",
+      "task": "리펙토링",
       "completed": false,
       "id": 5
-    },
-    {
-      "task": "리액트 강의 10개",
-      "completed": false,
-      "id": 6
     }
   ]
 }
