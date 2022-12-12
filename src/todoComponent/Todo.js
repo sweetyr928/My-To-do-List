@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPen } from "@fortawesome/free-solid-svg-icons";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { fetchDelete, fetchPatch } from "../util/api";
+import "./Todo.css";
 
 function Todo({ todo }) {
     const [isEditing, setIsEditing] = useState(false);

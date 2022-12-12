@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { fetchCreate } from "../util/api";
+import "./CreateTodo.css";
 
 const CreateTodo = () => {
     const [userInput, setUserInput] = useState("");
