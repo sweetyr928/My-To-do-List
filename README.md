@@ -1,4 +1,4 @@
-# 나만의 To-Do List 만들기(with React & Json-Server)
+# 나만의 To-Do List 만들기(with React & Json-server)
 
 ## 깃허브 페이지 배포 링크
 https://sweetyr928.github.io/My-To-do-List/
@@ -12,7 +12,7 @@ CRA부터 혼자 하려니 처음엔 무지 막막했다.
 Routing이나 Navigation 기능을 만드는 데에 많은 시간을 쏟았다. 다음에는 더 이상 Routing에서 헤매이지 않으리라...
 
 시간적 여유가 되면 서버를 간단하게라도 직접 만들어보고 싶었는데, CSS 부분이 많이 부족한 것 같아 다듬는데 시간이 좀 걸려
-하는 수 없이 Json-Server에서 만족하게 되었다.
+하는 수 없이 Json-server에서 만족하게 되었다.
 
 API를 받아와서 뭐라도 띄워보는 작은 기능(?)이라도 만들어보고 싶었는데, 어디에 넣어서 만들어야할지도 모르겠고(애초에 틀 자체를 CRUD에만 집중했기에^^7)
 이것저것 추가할수록 화면이 너무 조잡스러워지는 것 같아 정리한 후 달력만 추가했다.
