@@ -22,7 +22,7 @@
 .NewTodoForm button {
   padding: 0 1.3rem;
   border: none;
-  background: lightskyblue;
+  background: rgb(152, 174, 185);
   color: white;
   text-transform: uppercase;
   font-weight: bold;
@@ -35,11 +35,10 @@
 }
 
 .NewTodoForm button:hover {
-  background: rgb(103, 184, 238);
+  background:  rgb(93, 181, 210);
 }
 
 .NewTodoForm input,
 .NewTodoForm button {
-  font-family: "Quicksand", sans-serif;
   height: 3rem;
 }

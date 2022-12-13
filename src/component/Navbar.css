@@ -8,7 +8,7 @@
 }
 
 .navbar h1 {
-  color: black;
+  color: rgb(152, 174, 185);
 }
 
 .navbar .links {
@@ -23,10 +23,10 @@
 
 .linkToAdd ,.linkToCal {
   color: white;
-  background-color: rgb(144, 205, 238);
+  background-color: rgb(152, 174, 185);
   border-radius: 8px;
 }
 
-.linkToAdd:hover {
+.linkToAdd:hover, .linkToCal:hover {
   background-color: rgb(93, 181, 210);
 }
