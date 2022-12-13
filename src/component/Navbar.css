@@ -21,9 +21,9 @@
   padding: 6px;
 }
 
-.linkToAdd {
+.linkToAdd ,.linkToCal {
   color: white;
-  background-color: lightskyblue;
+  background-color: rgb(144, 205, 238);
   border-radius: 8px;
 }
 

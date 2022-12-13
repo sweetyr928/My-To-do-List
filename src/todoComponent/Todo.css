@@ -2,12 +2,13 @@
   display: flex;
   margin: 0 -3rem 4px;
   padding: 1.1rem 1.5rem;
-  justify-content: space-between;
   align-items: center;
-  background: rgba(159, 199, 200, 0.1);
+  background: rgba(159, 199, 200, 0.17);
+  border-radius: 20px;
 }
 
 .Todo-task {
+  margin-left: 10px;
   position: relative;
   transition: opacity 0.4s linear;
 }
@@ -40,6 +41,7 @@
 
 .Todo-buttons {
   flex-shrink: 0;
+  margin-left: auto;
   padding-left: 0.7em;
 }
 

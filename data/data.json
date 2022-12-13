@@ -8,7 +8,7 @@
     {
       "id": 2,
       "task": "오늘 배운 내용 열심히 블로깅 하기",
-      "completed": true
+      "completed": false
     },
     {
       "id": 3,
@@ -19,11 +19,6 @@
       "task": "스터디 참여하기",
       "completed": false,
       "id": 4
-    },
-    {
-      "task": "리펙토링",
-      "completed": false,
-      "id": 5
     }
   ]
 }

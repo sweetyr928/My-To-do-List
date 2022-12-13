@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPen } from "@fortawesome/free-solid-svg-icons";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { fetchDelete, fetchPatch } from "../util/api";
+import { MdOutlineCheckBox, MdOutlineCheckBoxOutlineBlank } from 'react-icons/md';
 import "./Todo.css";
 
 function Todo({ todo }) {
@@ -53,6 +54,7 @@ function Todo({ todo }) {
             </form>
         </div> :
         <div className="Todo">
+            {todo.completed ? <MdOutlineCheckBox/> : <MdOutlineCheckBoxOutlineBlank/>}
             <li
                 id={todo.id}
                 onClick={toggleCompleted}
